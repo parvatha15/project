@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="feedback.css">
+<title> feedback page </title>
+</head>
+
+<body>
+<center>
+<h1>FEEDBACK FROM </h1>
+    
+    <form class="form" action="feedback.php" method="POST">
+   
+   <p class="candidatename">
+      <input type="text" name="candidatename" id="candidatename"placeholder="your name" required>
+      <label for="candidatename">Candidatename </label>
+   </p>
+    
+    <p  class="mobileno">
+       <input type="text" name="mobileno" id="mobileno"placeholder="your number" required>
+       <label for="mobileno">Mobileno</label>
+   </p>
+   <p  class="emailid">
+       <input type="text" name="emailid" id="emailid" placeholder="your id" required>
+       <label for="emailid"> Emailid</label>
+   </p>
+    <p   class="feedback">
+      <textarea name="feedback" id="feedback"placeholder="your feedback" required></textarea>
+        <label for="text">Feedback</label>
+   </p>
+
+   
+   <p class="submit">
+      <input type="submit"  name="submit" value="submit">
+      
+    </p>
+
+</form>
+</center>
+</body>
+</html>

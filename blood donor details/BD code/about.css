@@ -1,0 +1,94 @@
+*{
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'cursive',sans-serif;
+
+}
+
+.about-us{
+    height: 100vh;
+	width: 100%;
+	padding: 90px 0;
+	background: #ddd;
+	width: 900;
+	height: 700;
+}
+
+.pic{
+
+	height: auto;
+	width: 302px;
+	border-radius: 15px 50px;
+
+}
+
+.about{
+
+
+	width: 1130px;
+	max-width: 85%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.text{
+
+	width: 540px;
+	background-color: #f1f1f1;
+	border-spacing: 30px;
+}
+
+
+.text h4{
+
+	font-size: 22px;
+	font-weight:500;
+	margin-bottom: 20px;
+	color: blueviolet;
+	text-decoration: underline;
+}
+
+
+.text p{
+
+
+	font-size: 18px;
+	line-height: 25px;
+	letter-spacing: 1px;
+	color: black;
+	font-family: monospace;
+}
+
+body{
+
+
+	background-attachment: fixed;
+	background-color: coral;
+}
+
+
+p::first-letter{
+
+	color: green;
+	font-variant: small-caps;
+	font-family: cursive;
+	font-size: 25px;
+	
+}
+
+span{
+
+
+	color: red;
+}
+
+marquee{
+
+	font-size: 90px;
+	font-weight:600;
+	
+}

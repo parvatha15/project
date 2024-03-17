@@ -1,0 +1,195 @@
+<html>
+<head>
+<title> registertation  Form </title>
+<link rel="stylesheet" type="text/css"  href="register.css">
+</head> 
+
+    <h2 align="center">Registration form</h2>  
+
+<script type="text/javascript">
+
+   function formatDate(date)
+   {
+            var d = new Date(date),
+            month = ''+(d.getMonth() + 1),
+            day = ''+d.getDate(),
+            year = d.getFullYear();
+              
+            if (month.length < 2) month = '0'+ month;
+            if (day.length < 2) day = '0' + day;
+
+            return[year,month,day].join('-');
+   }
+
+  function getAge(dateString)
+   {
+            var birthdate=new Date().getTime();
+            if(typeof dateString ==='undefined'|| dateString === null || (String(dateString) ==='NaN')){
+            
+            birthdate = new Date().getTime();
+
+  }
+
+        birthdate = new Date(dateString).getTime();
+        var now = new Date().getTime();
+         
+        var n = (now - birthdate)/1000;
+        if(n < 604800){
+         
+               var day_n = Math.floor(n/86400);
+               if (typeof day_n ==='undefined' ||  day_n === null || (String(day_n)==='NaN')){
+
+                return'';
+
+               } else{
+
+                return day_n + 'day' + (day_n > 1 ?'s':'') + 'old';
+                }
+                } else if(n < 2629743){
+                var week_n= Math.floor(n/604800);
+                if(typeof week_n ==='undefined' || week_n === null || (String(week_n) ==='NaN')){
+                    return'';
+                 }else{
+                    return week_n+'week'+(week_n > 1?'s':'') +'old';
+                 }
+                 }else if(n < 31562417){
+                    var month_n = Math.floor(n/2629743);
+                    if(typeof month_n ==='undefined'|| month_n === null || (String(month_n)==='NaN')){
+                        return'';
+
+                    }else {
+                        return month_n+'month'+ (month_n > 1 ?'s':'')+'old';
+                    }
+                    }else{
+                       var year_n= Math.floor(n/31556926);
+                       if(typeof year_n==='undefined' || year_n===null || (String(year_n)==='NaN')){
+
+                        return year_n='';
+
+                       }else{
+                        return year_n +'year'+ (year_n > 1 ?'s':'') +'old';
+
+                    }
+                 }
+
+          }
+
+          function getAgeVal(pid) {
+              
+              var birthdate = formatDate(document.getElementById("txtbirthdate").value);
+              var count = document.getElementById("txtbirthdate").value.length;
+
+              if(count=='10'){
+                 var age = getAge(birthdate);
+                 var str = age;
+                 var res = str.substring(0,1);
+              if(res =='-' || res=='0'){
+                document.getElementById("txtbirthdate").value="";
+                document.getElementById("txtage").value="";
+                 $('#txtbirthdate').focus();
+                 return false;
+                } else{
+                    document.getElementById("txtage").value=age;
+                } 
+                }else{
+                document.getElementById("txtage").value="";
+                return false;
+            }
+
+        }  
+
+</script>
+
+
+<form class="form"action="register2.php" method="POST">
+<table border="0" align="center">
+<tbody> 
+<tr>
+     <td><label for="name"> Name </label></td>
+     <td><input type="text" id="name" name="name"  placeholder="name" maxlength="50"  required /></td>
+</tr>
+<tr>
+	 <td><label for="gender">Gender </label></td>
+     <td><label for="checkbox">Male</label> <br>
+         <input type="checkbox" id="checkbox" name="gender" value="male" >
+         <label for=" checkbox">Female</label><br>
+         <input type="checkbox" id="checkbox" name="gender"  value="female" >
+         <label for=" checkbox">Others</label><br><br>
+         <input type="checkbox" id="checkbox" name="gender" value="Others">
+</td>
+</tr>
+
+<tr>
+	    <td><label for="bloodgroup">Bloodgroup </label></td>
+	    <td><select id="bloodgroup" name=" bloodgroup"  maxlength="50" required>
+	 	<option value="None">None</option>
+		<option value="A+">A+</option>
+		<option value="B+">B+</option>
+		<option value="A-">A-</option>
+		<option value="B-">B-</option>
+		<option value="O-">O-</option>
+		<option value="O+">O+</option>
+		<option value="AB-">AB-</option>
+		<option value="AB+">AB+</option>
+</td>
+</select>
+ </tr>
+ 
+<tr>
+  <td><label for="txtbirthdate">DOB</label></td>
+  <td><input id="txtbirthdate" type="text" name="txtbirthdate" maxlength="10"
+                placeholder="mm/dd/yyyy"  onkeyup="getAgeVal(0)" onblur="getAgeVal(0)"; name="txtbirthdate"/></td><br>
+</tr>
+
+
+
+<tr>
+    <td><label for="txtage">Age</label></td>
+    <td><input id="txtage" type="text" name="txtage" autocomplete="off" disabled  maxlength="50"required;   name="txtage"/></td>
+</tr>
+
+
+<tr>
+    <td><label for="weight">Weight </label></td>
+    <td><input    type="number"id="weight" name="weight" min="45" max="120" placeholder="Weight"  maxlength="50" required /></td>
+</tr>
+ 
+<tr>
+    <td><label for="address"> Address </label></td>
+    <td><textarea id="address" name="address"  placeholder="address" name="address" maxlength="50" placeholder="enter your address" required /> </textarea></td>
+
+</tr>
+
+
+<tr>
+        <td><label for="aadhaarno"> Aadhaarno </label></td>
+        <td><input type="aadhaarno" id="aadhaarno" name="aadhaarno"  placeholder="aadhaarno" maxlength="50" required /></td>
+</tr>
+
+
+<tr>
+        <td><label for="phoneno" name="phoneno"> PhoneNo </label></td>
+        <td><input type="phoneno" id="phoneno" name="phoneno"  placeholder="phoneno"  maxlength="50" required /></td>
+</tr>
+
+
+<tr>
+
+       <td><label for="emailid"> Emailid </label></td>
+       <td><input type="emailid" id="emailid" name="emailid"  placeholder="emailid" maxlength="50"  min="1" max="10"/></td>
+       <br>
+</tr>
+
+<tr>
+	
+<td><button type="submit" name="submit" value="submit"> submit</button></td></tr>&nbsp;
+
+<tr>
+
+<td><a href="login.html">Back</a></td>
+</tr>
+
+</tbody>
+</table>
+</from>
+</html>

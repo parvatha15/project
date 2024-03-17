@@ -1,0 +1,73 @@
+<html>
+<head>
+<title> Logins page</title>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+<div id="frm">
+	<h2>Login</h2>
+	<form name="f1" action="register.html" onsubmit="return validation()" method="POST">
+	<form name="f1" action="loginout.php" method="POST">
+		
+<p>
+	<label> username:</label>
+	<input type="text" id="user" name="user"/>
+</p>
+<p>
+	<label> password:</label>
+	<input type="password" id="pass" name="pass"/>
+</p>
+<p>
+    <input type="submit"  id="btn" value="login"><br><br>
+    <input type="submit"  id="btn" value="logout"/><br><br>
+</p>
+    <a href="newpage.html">NewRegister</a>
+
+</form>	
+</div>
+
+<script>
+
+	function validation()
+	  {
+        var id=document.f1.user.value;
+        var ps=document.f1.pass.value;
+
+        if(id.length=="" && ps.length=="")
+		{
+            alert("username and password fields are empty");
+        	return false;
+        }
+        else
+        {
+
+          if(id.length=="")
+		{
+            alert("username is empty");
+            return false;
+        }
+          if(ps.length=="")
+		{
+            alert("password field is empty");
+          	return false;
+          }
+      }
+  }
+
+</script>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+ 

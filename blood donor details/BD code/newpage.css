@@ -1,0 +1,83 @@
+body{
+    font-family: sans-serif;
+    background-color: coral;
+ }
+ *{
+    box-sizing: border-box;
+ }
+ .container{
+ 
+     padding: 16px;
+     background-image: url('star.jpg');
+     background-attachment: fixed;
+     background-size: contain;
+     color: blue;
+     font-family: cursive;
+ }
+ 
+ input[type=text],input[type=password]{
+ 
+ width:100%;
+ padding: 15px;
+ margin: 5px 0px 5px 0px;
+ display: inline-block;
+ border: none;
+ background-color: #f1f1f1;
+     
+ }
+ 
+ input[type=text],input[type=password]:focus{
+ 
+     background-color: #ddd;
+     outline: none;
+ }
+ 
+ hr{
+ 
+ border: 1px solid #f1f1f1;
+ margin-bottom: 25px;
+ 
+ }
+ 
+ .submit{
+   
+     background-color:seagreen;
+     color: white;
+     padding: 10px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+     opacity: 0.9;
+ }
+ 
+ 
+ .submit:hover{
+ 
+     opacity: 1;
+ }
+ 
+ a{
+     color: dodgerblue;
+ }
+ 
+ .signin{
+ 
+     background-color: #f1f1f1;
+     text-align: center;
+ }
+ 
+ h2{
+ 
+     text-align: center;
+     text-shadow: 2px 2px 5px greenyellow;
+     color: greenyellows;
+ }
+ 
+ p{
+ 
+ 
+ 
+  text-align: center;
+  text-decoration: underline;
+ }
